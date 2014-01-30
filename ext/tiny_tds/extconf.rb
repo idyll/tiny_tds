@@ -71,12 +71,12 @@ else
     # Check the ruby install locations
     LIBDIR,
     # Finally fall back to /usr
-    '/usr/lib',
+    '/usr/lib'
   ].reject{ |dir| !File.directory?(dir) }
 end
 
-FREETDS_HEADER_DIRS = (searchable_paths_with_directories(['include'],['include','freetds']) + HEADER_DIRS).uniq
-FREETDS_LIB_DIRS = (searchable_paths_with_directories(['lib'],['lib','freetds']) + LIB_DIRS).uniq
+FREETDS_HEADER_DIRS = (HEADER_DIRS + searchable_paths_with_directories(['include'],['include','freetds'])).uniq
+FREETDS_LIB_DIRS = (LIB_DIRS + searchable_paths_with_directories(['lib'],['lib','freetds'])).uniq
 
 # lookup over searchable paths is great for native compilation, however, when
 # cross compiling we need to specify our own paths.
