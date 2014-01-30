@@ -84,7 +84,9 @@ FREETDS_LIB_DIRS = (LIB_DIRS + searchable_paths_with_directories(['lib'],['lib',
 dir_config('iconv',   FREETDS_HEADER_DIRS, FREETDS_LIB_DIRS)
 dir_config('freetds', FREETDS_HEADER_DIRS, FREETDS_LIB_DIRS)
 
-puts `which tsql`
+puts `ls -alt`
+puts `pwd`
+puts `ls /app/vendor -alt`
 
 puts FREETDS_LIB_DIRS
 puts FREETDS_HEADER_DIRS
