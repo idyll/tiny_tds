@@ -80,16 +80,10 @@ FREETDS_LIB_DIRS = (searchable_paths_with_directories(['lib'],['lib','freetds'])
 
 # lookup over searchable paths is great for native compilation, however, when
 # cross compiling we need to specify our own paths.
-if enable_config("lookup", true)
-  dir_config('iconv',   FREETDS_HEADER_DIRS, FREETDS_LIB_DIRS)
-  dir_config('freetds', FREETDS_HEADER_DIRS, FREETDS_LIB_DIRS)
-else
-  dir_config('iconv')
-  dir_config('freetds')
 
-  # remove LDFLAGS
-  $LDFLAGS = ENV.fetch("LDFLAGS", "")
-end
+dir_config('iconv',   FREETDS_HEADER_DIRS, FREETDS_LIB_DIRS)
+dir_config('freetds', FREETDS_HEADER_DIRS, FREETDS_LIB_DIRS)
+
 
 def asplode(lib)
   abort "-----\n#{lib} is missing.\n-----"
