@@ -54,6 +54,8 @@ else
     '/opt/local/include',
     # Then search /usr/local for people that installed from source
     '/usr/local/include',
+    # just for you heroku
+    '/app/vendor/freetds-0.91/include',
     # Check the ruby install locations
     INCLUDEDIR,
     # Finally fall back to /usr
@@ -64,6 +66,8 @@ else
     '/opt/local/lib',
     # Then search /usr/local for people that installed from source
     '/usr/local/lib',
+    # just for you heroku
+    '/app/vendor/freetds-0.91/lib',
     # Check the ruby install locations
     LIBDIR,
     # Finally fall back to /usr
